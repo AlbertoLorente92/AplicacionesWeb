@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Aplicaciones Web</title>
+	<link href="css/style.css" rel="stylesheet" type="text/css" />
+	<script type="text/javascript" src="js/javascript.js"></script>
+</head>
+<body onload="checkSubmit();">
+
+<div id="admin">
+	<form method="post" action="confirmar.php">
+		<table id="login">
+			<tr>
+				<td>
+					<p>
+						Account:
+					</p>
+				</td>
+				<td>
+					<input type="text" name="account" id="account" onblur="checkAcc(this);">
+				</td>
+			</tr>	
+			<tr>
+				<td>
+					<p>
+						Password:
+					</p>
+				</td>
+				<td>
+					<input type="password" name="password" id="password" onblur="checkPass(this);">
+				</td>
+			</tr>	
+			<tr>
+				<td colspan="2">
+					<input type="submit" name="submit" value="Enviar" id="submit">
+				</td>
+			</tr>	
+		</table>
+	</form>
+</div>
+
+
+</div>
+</body>
+</html>

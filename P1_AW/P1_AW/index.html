@@ -1,0 +1,112 @@
+<html>
+	<head>
+		<title>Aplicaciones Web. Pr&aacute;ctica 1</title>
+		<link rel="stylesheet" href="css/myStyle.css" type="text/css"/>  
+		<script type="text/javascript" src="js/myScript.js"></script>
+	</head>
+	<body>
+		<p>Comida a domicilio</p>
+		<p>Datos del cliente</p>
+		<form name=”formulario”>
+			<table id="datosCliente">
+				<tr>
+					<td>Nombre</td>
+					<td><input style="visibility: visible;" type="text" id="nombre" onmouseover="OnMouse(this);" onmouseout="OutMouse(this);" onblur="checkText(this)"/></td>
+					<td style="visibility: hidden;" id="nombreOculto">Introduce tu nombre, solo letras</td> 
+				</tr>
+				<tr>
+					<td>Apellidos</td>
+					<td><input type="text" id="apellidos" onmouseover="OnMouse(this);" onmouseout="OutMouse(this);" onblur="checkText(this)"/></td> 
+					<td style="visibility: hidden;" id="apellidosOculto">Introduce tus apellidos, solo letras</td> 
+				</tr>
+				<tr>
+					<td>NIF</td>
+					<td><input type="text" id="NIF" onmouseover="OnMouse(this);" onmouseout="OutMouse(this);" onblur="checkNIF()"/></td> 
+					<td style="visibility: hidden;" id="NIFOculto">Introduce tu NIF (n&uacute;mero y letra)</td> 
+				</tr>
+				<tr>
+					<td>Direcci&oacute;n</td>
+					<td><input type="text" id="direccion" onmouseover="OnMouse(this);" onmouseout="OutMouse(this);"/></td> 
+					<td style="visibility: hidden;" id="direccionOculto">Introduce tu direcci&oacute;n</td>
+				</tr>
+				<tr>
+					<td>C&oacute;digo postal</td>
+					<td><input type="text" id="CP" onmouseover="OnMouse(this);" onmouseout="OutMouse(this);" onblur="checkNum(this);"/></td>
+					<td style="visibility: hidden;" id="CPOculto">Introduce tu NIF c&oacute;digo postal (5 d&iacute;gitos)</td> 
+				</tr>
+				<tr>
+					<td>e-mail</td>
+					<td><input type="text" id="email" onmouseover="OnMouse(this);" onmouseout="OutMouse(this);" onblur="checkEmail();"/></td>
+					<td style="visibility: hidden;" id="emailOculto">Introduce tu email</td> 
+				</tr>
+				<tr>
+					<td>Tel&eacute;fono</td>
+					<td><input type="text" id="telefono" onmouseover="OnMouse(this);" onmouseout="OutMouse(this);" onblur="checkNum(this);"/></td>
+					<td style="visibility: hidden;" id="telefonoOculto">Introduce tu tel&eacute;fono</td> 
+				</tr>
+				<!---<tr>
+					<td><input id="comprobacion"type="submit" value="Comprobar datos" onclick="checkDatos();" onmouseover="OnMouse(this);" onmouseout="OutMouse(this);"></td>
+					<td style="visibility: hidden;" id="comprobacionOculto">Comprueba si faltan datos</td>
+				</tr>-->
+			</table>
+
+			
+
+		</form>
+		<p>Datos del pedido</p>
+
+		<form action="">
+			<table>
+				<tr id="comida1" onmouseover="OnMouse(this);" onmouseout="OutMouse(this);">
+					<td>Primer Plato</td>
+					<td><input type="radio" name="comida1" value="5" onclick="calculaPrecio()">Sopa  5&#8364;</td>
+					<td><input type="radio" name="comida1" value="5" onclick="calculaPrecio()">Ensalada  5&#8364;</td>
+					<td><input type="radio" name="comida1" value="5" onclick="calculaPrecio()">Pasta  5&#8364;</td>
+					<td style="visibility: hidden;" id="comida1Oculto">Seleccione un &uacute;nico plato (1)</td>
+				</tr>
+
+				<tr>
+					<td id="comida2" onmouseover="OnMouse(this);" onmouseout="OutMouse(this);">Segundo Plato</td>
+					<td id="comida2" onmouseover="OnMouse(this);" onmouseout="OutMouse(this);"><input type="radio" name="comida2" value="7" onclick="calculaPrecio();">Ternera  7&#8364;</td>
+					<td id="comida2" onmouseover="OnMouse(this);" onmouseout="OutMouse(this);"><input type="radio" name="comida2" value="7" onclick="calculaPrecio();">Pollo  7&#8364;</td>
+					<td id="comida2" onmouseover="OnMouse(this);" onmouseout="OutMouse(this);"><input type="radio" name="comida2" value="7" onclick="calculaPrecio();">Cerdo 7&#8364;</td>
+					<td id="comida2" onmouseover="OnMouse(this);" onmouseout="OutMouse(this);"><input type="radio" name="comida2" value="7" onclick="calculaPrecio();">Kebab 7&#8364;</td>
+					<td style="visibility: hidden;" id="comida2Oculto">Seleccione un &uacute;nico plato (2)</td>
+					<td id="comida3" onmouseover="OnMouse(this);" onmouseout="OutMouse(this);">
+						<td id="comida3" onmouseover="OnMouse(this);" onmouseout="OutMouse(this);"><input type="checkbox" name="comida3" value="2" onclick="checkIngredientes(this);calculaPrecio();">Ketchup 2&#8364;<br>
+						<input type="checkbox" name="comida3" value="2" onclick="checkIngredientes(this);calculaPrecio();">Mayonesa 2&#8364;<br>
+						<input type="checkbox" name="comida3" value="2" onclick="checkIngredientes(this);calculaPrecio();">Soja 2&#8364;<br>
+						<input type="checkbox" name="comida3" value="2" onclick="checkIngredientes(this);calculaPrecio();">Wasabi 2&#8364;<br>
+						<input type="checkbox" name="comida3" value="2" onclick="checkIngredientes(this);calculaPrecio();">Picante 2&#8364;</td>
+						<td style="visibility: hidden;" id="comida3Oculto">Seleccione hasta 3 salsas</td>
+					</td>
+				</tr>
+
+				<tr id="comida4" onmouseover="OnMouse(this);" onmouseout="OutMouse(this);">
+					<td>Bebidas</td>
+					<td><input type="radio" name="comida4" value="3" onclick="calculaPrecio()">Agua 3&#8364;</td>
+					<td><input type="radio" name="comida4" value="3" onclick="calculaPrecio()">Fanta 3&#8364;</td>
+					<td><input type="radio" name="comida4" value="3" onclick="calculaPrecio()">Coca 3&#8364;</td>
+					<td><input type="radio" name="comida4" value="3" onclick="calculaPrecio()">Cerveza 3&#8364;</td>
+					<td><input type="radio" name="comida4" value="3" onclick="calculaPrecio()">Vino 3&#8364;</td>
+					<td style="visibility: hidden;" id="comida4Oculto">Seleccione una bebida</td>
+				</tr>
+
+				<tr>
+					<td>C&oacute;digo promocional</td>
+					<td><input type="text" id="cod" onblur="funCodigo(this);" onmouseover="OnMouse(this);" onmouseout="OutMouse(this);"></td>
+					<td style="visibility: hidden;" id="codOculto">Introduce tu c&oacute;digo de descuento</td>
+				</tr>
+
+				<tr>
+					<td><input id="fin" type="submit" value="Pedir comida" onclick="checkCompra();" onmouseover="OnMouse(this);" onmouseout="OutMouse(this);"></td>
+					<td><input type="text" id="cantidad" disabled></td>
+					<td style="visibility: hidden;" id="finOculto">Termina la compra</td>
+				</tr>
+			</table>
+
+			
+		</form>
+
+	</body>
+</html>
